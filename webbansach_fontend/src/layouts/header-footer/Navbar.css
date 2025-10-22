@@ -1,0 +1,377 @@
+/* ==========================
+   NAVBAR (Pastel tone) - Hoàn chỉnh
+   - Tone pastel-blue
+   - Cải tiến accessibility: :focus-visible, active states
+   - Cải thiện hover/focus cho icon, dropdown, toggler
+   ========================== */
+
+/* NAVBAR overall pastel tone */
+.navbar-custom {
+  background-color: #eef9ff; /* pastel blue background */
+  border-bottom: 1px solid rgba(3, 51, 66, 0.06);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Brand */
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: inline-block;
+}
+.brand-text {
+  color: #063a45;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+/* NAV links */
+.navbar-custom .nav-link {
+  color: #063a45;
+  transition: color 0.12s ease, background-color 0.12s ease, transform 120ms ease;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+/* active (NavLink) */
+.navbar-custom .nav-link.active,
+.navbar-custom .nav-link[aria-current="page"] {
+  background: linear-gradient(180deg, rgba(6,58,69,0.06), rgba(6,58,69,0.03));
+  color: #032b33;
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 rgba(3, 51, 66, 0.03);
+}
+
+/* hover / focus */
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link:focus,
+.navbar-custom .nav-link:active {
+  color: #032b33;
+  background: rgba(3, 51, 66, 0.03);
+  transform: translateY(-1px);
+}
+
+/* keyboard focus (visible) */
+.navbar-custom .nav-link:focus-visible,
+.navbar-custom .dropdown-item:focus-visible,
+.search-btn.pastel:focus-visible,
+.search-input:focus-visible,
+.icon-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(6, 58, 69, 0.08);
+  border-radius: 8px;
+}
+
+/* DROPDOWN styling (Bootstrap overrides) */
+.navbar-custom .dropdown-menu {
+  background-color: #d7f3ff;
+  border: 1px solid #bfe9ff;
+  box-shadow: 0 6px 18px rgba(6, 45, 53, 0.06);
+  padding: 6px 0;
+  min-width: 220px;
+  border-radius: 8px;
+  z-index: 1055; /* ensure above other elements */
+}
+
+/* Dropdown items */
+.navbar-custom .dropdown-item {
+  color: #04343b;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 120ms ease, color 120ms ease, transform 120ms ease;
+}
+.navbar-custom .dropdown-item:hover,
+.navbar-custom .dropdown-item:focus {
+  background-color: #bfeeff;
+  color: #012426;
+  transform: translateY(-1px);
+}
+
+/* Subtle divider style for better visual grouping */
+.navbar-custom .dropdown-divider {
+  border-top: 1px solid rgba(3,51,66,0.04);
+  margin: 6px 0;
+}
+
+/* ---------- Pastel-blue search (simple & readable) ---------- */
+.search-wrapper {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* group to make pill + shadow */
+.search-input-group.pastel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #eef9ff;               /* soft pastel base */
+  border: 1px solid #d8f0ff;         /* soft border */
+  padding: 6px 8px;
+  border-radius: 28px;
+  box-shadow: 0 6px 16px rgba(3, 51, 66, 0.04);
+  transition: box-shadow 140ms ease, transform 140ms ease;
+  align-self: center;
+}
+
+/* subtle lift on hover */
+.search-input-group.pastel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(3, 51, 66, 0.06);
+}
+
+/* input */
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 10px 12px;
+  width: 260px;               /* desktop width */
+  font-size: 0.95rem;
+  color: #04343b;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* ensure input remains accessible in collapsed navbar */
+.collapse .search-input {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* placeholder color */
+.search-input::placeholder {
+  color: rgba(4, 52, 59, 0.45);
+}
+
+/* pastel button */
+.search-btn.pastel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 12px;
+  border-radius: 20px;
+  border: 1px solid #bfe8ff;
+  background: linear-gradient(180deg, #bfe8ff 0%, #9fdfff 100%);
+  color: #04343b;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms;
+  box-shadow: 0 6px 14px rgba(15, 105, 255, 0.06);
+}
+
+/* icon color inside button */
+.search-btn.pastel svg { color: #04343b; stroke: currentColor; display: block; }
+
+/* hover / active */
+.search-btn.pastel:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(15, 105, 255, 0.08);
+}
+.search-btn.pastel:active {
+  transform: translateY(0);
+  opacity: 0.95;
+}
+
+/* icons color */
+.icon-link {
+  color: #063a45;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 120ms ease, transform 120ms ease;
+}
+.icon-link svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+}
+
+/* icon hover/focus */
+.icon-link:hover,
+.icon-link:focus {
+  color: #032b33;
+  transform: translateY(-1px);
+}
+
+/* navbar toggler (for mobile) - customize contrast */
+.navbar-custom .navbar-toggler {
+  border: 1px solid rgba(3,51,66,0.06);
+  background: rgba(255,255,255,0.02);
+  padding: 6px;
+  border-radius: 8px;
+}
+.navbar-custom .navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(6,58,69,0.08);
+}
+
+/* small-screen adjustments */
+@media (max-width: 992px) {
+  .search-input { width: 180px; }
+  .navbar-custom .nav-link { padding: 8px 6px; }
+  .brand-text { font-size: 1rem; }
+}
+
+/* very small screens */
+@media (max-width: 576px) {
+  .brand-text { display: none; } /* hide brand text on very small screens */
+  .brand-logo { width: 32px; height: 32px; }
+  .search-input { width: 110px; padding: 8px 10px; }
+  .search-input-group.pastel { padding: 6px; gap: 6px; }
+  .navbar-custom .dropdown-menu { min-width: 180px; }
+}
+
+/* focus accessibility tweaks */
+.search-input:focus { box-shadow: none; }
+.search-btn.pastel:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(15,105,255,0.08);
+}
+
+/* reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .search-input-group.pastel,
+  .nav-link,
+  .icon-link,
+  .dropdown-item,
+  .search-btn.pastel {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* High-contrast fallback */
+@media (forced-colors: active) {
+  .navbar-custom { background: Window; color: WindowText; border-color: GrayText; }
+  .nav-link, .icon-link, .dropdown-item, .brand-text { color: WindowText; }
+  .search-input { background: transparent; color: WindowText; border-color: GrayText; }
+}
+
+/* Utility: ensure dropdown menu links are keyboard reachable */
+.navbar-custom .dropdown-menu .dropdown-item:focus {
+  outline: none;
+  background-color: rgba(3,51,66,0.06);
+  color: #032b33;
+}
+/* ========== Profile popover styles ========== */
+.profile-popover {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  width: 220px;
+  background: #ffffff;
+  color: #032b33;
+  border: 1px solid rgba(3,51,66,0.06);
+  border-radius: 10px;
+  box-shadow: 0 14px 36px rgba(3,51,66,0.08);
+  padding: 10px;
+  z-index: 1200;
+  transform-origin: top right;
+  animation: popFade 140ms ease;
+}
+
+/* small animation */
+@keyframes popFade {
+  from { opacity: 0; transform: translateY(-6px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.profile-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(3,51,66,0.04);
+  margin-bottom: 8px;
+}
+
+.profile-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg,#eef9ff,#d7f3ff);
+  border: 1px solid rgba(3,51,66,0.04);
+}
+
+.profile-avatar img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.profile-avatar-fallback {
+  color: #032b33;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.profile-meta { font-size: 0.9rem; }
+.profile-name { font-weight: 700; color: #032b33; }
+.profile-email { color: rgba(3,51,66,0.6); font-size: 0.8rem; margin-top: 2px; }
+
+/* actions */
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.profile-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #04343b;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+/* ghost button look for logout */
+.btn-ghost {
+  background: transparent;
+  border: none;
+  padding: 8px 10px;
+}
+
+/* hover/focus states */
+.profile-action:hover,
+.profile-action:focus {
+  background: rgba(6,58,69,0.04);
+  color: #032b33;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.profile-action:focus-visible {
+  box-shadow: 0 0 0 4px rgba(6,58,69,0.08);
+  border-radius: 8px;
+}
+
+/* small screens - ensure popover fits */
+@media (max-width: 576px) {
+  .profile-popover {
+    right: 8px;
+    left: 8px;
+    width: auto;
+    top: calc(100% + 6px);
+  }
+}

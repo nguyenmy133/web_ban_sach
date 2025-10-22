@@ -1,0 +1,45 @@
+/* Pastel Blue Theme – Bootstrap override */
+:root{
+  --bs-primary:#7cc3ff;                 /* xanh biển pastel chính */
+  --bs-primary-rgb:124,195,255;
+}
+
+.pastel-page{
+  background:linear-gradient(180deg,#f6fbff,#eef6ff);
+  min-height:100vh;
+}
+
+/* Card & input tone dịu */
+.card{ border-color:#e3f0ff !important; }
+.input-group-text{ background-color:#eef6ff !important; border-color:#d9eaff !important; }
+
+.form-control,.form-select{ border-color:#d9eaff !important; }
+.form-control:focus,.form-select:focus{
+  border-color:var(--bs-primary) !important;
+  box-shadow:0 0 0 .2rem rgba(124,195,255,.25) !important;
+}
+
+/* Buttons pastel blue */
+.btn-primary{
+  background-color:var(--bs-primary) !important;
+  border-color:var(--bs-primary) !important;
+  color:#fff !important;
+}
+.btn-primary:hover,.btn-primary:focus{
+  background-color:#69b7ff !important;
+  border-color:#69b7ff !important;
+}
+
+.btn-outline-primary{
+  color:#2a6fb3 !important;
+  border-color:#add8ff !important;
+  background-color:transparent !important;
+}
+.btn-outline-primary:hover,.btn-outline-primary:focus{
+  color:#fff !important;
+  background-color:var(--bs-primary) !important;
+  border-color:var(--bs-primary) !important;
+}
+
+/* Label luôn căn trái */
+.form-label{ text-align:left !important; }

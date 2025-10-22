@@ -1,0 +1,130 @@
+:root {
+  /* hài hoà nền pastel của footer */
+  --card-bg: #fff;
+  --card-border: #e8ecf3;
+  --title: #14213d;
+  --muted: #667085;
+  --accent: #6c8cff;
+  --accent-hover: #5a7bf0;
+  --badge: #ff4d4f;
+}
+
+/* Khung thẻ */
+.bookcard {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.bookcard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(20, 33, 61, 0.08);
+  border-color: rgba(108, 140, 255, 0.35);
+}
+
+/* Ảnh & overlay */
+.bookcard__media {
+  position: relative;
+  aspect-ratio: 3 / 4.2;
+  background: #f5f7fb;
+}
+.bookcard__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.bookcard__badge {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background: var(--badge);
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(255, 77, 79, .25);
+}
+.bookcard__wish {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: #ffffffda;
+  display: grid;
+  place-items: center;
+  color: #ff6680;
+  backdrop-filter: blur(4px);
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.bookcard__wish:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+
+/* Text */
+.bookcard__author {
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-top: 4px;
+}
+.bookcard__title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--title);
+  line-height: 1.35;
+  margin: 4px 0 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.bookcard__desc {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Giá */
+.bookcard__price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.bookcard__price--current {
+  color: var(--title);
+  font-weight: 900;
+  font-size: 18px;
+}
+.bookcard__price--old {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Nút */
+.bookcard__btn {
+  height: 42px;
+  border-radius: 10px;
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 700;
+  transition: transform .12s ease, filter .15s ease, background .15s ease, border-color .15s ease;
+}
+.bookcard__btn:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .bookcard__price--current { font-size: 17px; }
+}

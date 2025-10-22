@@ -1,0 +1,48 @@
+/* pastel gradient background for the whole banner area */
+.nook-banner {
+  background: linear-gradient(90deg, #eafaf0 0%, #eef7ff 100%);
+}
+
+/* inner card that contrasts slightly with soft white + blur shadow */
+.banner-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 6px 20px rgba(20,40,50,0.06);
+  align-items: center;
+}
+
+/* title and author styling */
+.banner-title {
+  color: #0f2937; /* dark-teal-ish for readable contrast */
+  line-height: 1.05;
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+}
+.banner-author {
+  color: #134e4a; /* muted teal */
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+/* pastel button */
+.btn-pastel {
+  background: linear-gradient(180deg, #78c2a3 0%, #57a987 100%);
+  border: none;
+  color: #fff;
+  padding: 0.7rem 1.25rem;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(87,169,135,0.18);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn-pastel:hover,
+.btn-pastel:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(87,169,135,0.22);
+  text-decoration: none;
+  outline: none;
+}
+
+/* responsive tweaks */
+@media (max-width: 767.98px) {
+  .banner-card { text-align: center; }
+  .banner-action { text-align: center; }
+}

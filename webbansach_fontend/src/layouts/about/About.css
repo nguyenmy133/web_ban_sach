@@ -1,0 +1,79 @@
+/* Palette */
+.nb-about {
+  --nb-primary: #58C4A5;
+  --nb-primary-dark: #319781;
+  --nb-surface: #EAF6F3;
+  --nb-surface2: #F1FAFB;
+  --nb-ink: #0F172A;
+  --nb-ink-soft: #475569;
+}
+
+/* Helpers */
+.nb-about .rounded-2xl { border-radius: 1rem; }
+.nb-about .shadow-soft { box-shadow: 0 10px 30px rgba(15,23,42,.08); }
+.nb-about .nb-ink { color: var(--nb-ink); }
+.nb-about .nb-ink-soft { color: var(--nb-ink-soft); }
+.nb-about .nb-primary-text { color: var(--nb-primary-dark); }
+
+/* Components */
+.nb-about .chip{
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:.375rem .75rem; border-radius:999px; font-weight:600; font-size:.875rem;
+  background:white; color:var(--nb-primary-dark); border:1px solid rgba(0,0,0,.05);
+}
+
+.nb-about .stat{
+  background:white; border-radius:1rem; padding:1rem 1.25rem; text-align:center;
+  box-shadow: 0 10px 25px rgba(15,23,42,.06);
+}
+
+.nb-about .value-card{
+  background:white; border:1px solid rgba(2,6,23,.06); border-radius:1rem; padding:1.25rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.nb-about .value-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(15,23,42,.08);
+}
+
+.nb-about .cta-btn{
+  background:var(--nb-primary); color:white; border:none; font-weight:700;
+  padding:.85rem 1.1rem; border-radius:.8rem;
+}
+.nb-about .cta-btn:hover{ background:var(--nb-primary-dark); }
+
+.nb-about .link-soft{ color:var(--nb-primary-dark); font-weight:600; text-decoration:none; }
+.nb-about .link-soft:hover{ text-decoration:underline; }
+
+/* Sections */
+.nb-about .nb-hero{
+  background: linear-gradient(120deg, var(--nb-surface) 0%, var(--nb-surface2) 100%);
+  min-height: 260px;
+}
+@media (min-width: 992px){
+  .nb-about .nb-hero{ min-height: 340px; }
+}
+
+.nb-about .nb-card{
+  background:white; border:1px solid rgba(2,6,23,.06);
+  border-radius:1rem;
+}
+
+.nb-about .nb-img-frame{
+  background: var(--nb-surface);
+  border: 1px solid rgba(2,6,23,.06);
+}
+
+.nb-about .nb-section-alt{
+  background: var(--nb-surface2);
+}
+
+.nb-about .nb-cta{
+  background: linear-gradient(140deg, var(--nb-surface) 0%, #ffffff 100%);
+}
+.nb-about .nb-cta .cta-btn{ margin-right: .5rem; }
+
+/* Images */
+.nb-about .nb-img-frame img{
+  width:100%; height:320px; object-fit:cover;
+}

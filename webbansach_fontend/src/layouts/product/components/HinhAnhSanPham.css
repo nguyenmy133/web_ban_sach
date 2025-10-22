@@ -1,0 +1,52 @@
+.ha { width: 100%; }
+
+.ha-main {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #f8f8f8;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.ha-main__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity .2s ease;
+}
+.ha-skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #eee, #f5f5f5, #eee);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.ha-thumb {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.ha-thumb__btn {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ha-thumb__btn.is-active {
+  outline: 2px solid #2563eb;
+}
+.ha-thumb__btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

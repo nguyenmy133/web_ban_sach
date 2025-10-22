@@ -1,0 +1,250 @@
+/* Container & layout */
+.ctsp { background: #fafafa; padding: 24px 0 48px; }
+.ctsp-container { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+
+.ctsp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 992px) {
+  .ctsp-grid { grid-template-columns: 5fr 7fr; gap: 24px; }
+}
+
+/* Cards */
+.ctsp-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+  padding: 20px;
+}
+.ctsp-card-media {
+  position: sticky;
+  top: 16px; /* giúp khu vực ảnh sticky khi cuộn */
+}
+
+/* Breadcrumb */
+.ctsp-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+  font-size: 14px;
+}
+.ctsp-breadcrumb a { color: #666; text-decoration: none; }
+.ctsp-breadcrumb a:hover { text-decoration: underline; }
+.ctsp-breadcrumb .current { color: #111; font-weight: 600; }
+
+/* Header */
+.ctsp-title {
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.25;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  color: #111;
+}
+.ctsp-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 16px;
+}
+.ctsp-dot { opacity: 0.5; }
+.ctsp-price {
+  font-weight: 700;
+  font-size: 20px;
+  color: #0a7;
+}
+.ctsp-rating .star {
+  font-size: 18px;
+  margin-right: 4px;
+  color: #f5a623;
+}
+
+/* Actions */
+.ctsp-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+.btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary {
+  background: #111;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(17,17,17,.15);
+}
+.btn-primary:hover { background: #000; }
+.btn-outline {
+  background: #fff;
+  color: #111;
+  border-color: #ddd;
+}
+.btn-outline:hover { background: #f6f6f6; }
+
+/* Separator */
+.ctsp-sep {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #eee, transparent);
+  margin: 16px 0;
+}
+
+/* Description (prose) */
+.prose {
+  color: #222;
+  line-height: 1.7;
+  font-size: 15px;
+}
+.prose h2, .prose h3 { margin-top: 1.2em; }
+.prose p { margin: 0.6em 0; }
+.prose ul { padding-left: 1.2em; }
+
+/* Alerts & skeleton */
+.ctsp-alert {
+  background: #fff3f3;
+  color: #a50000;
+  border: 1px solid #ffd6d6;
+  padding: 14px 16px;
+  border-radius: 12px;
+}
+.ctsp-skeleton {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 992px) {
+  .ctsp-skeleton { grid-template-columns: 5fr 7fr; }
+}
+.sk-media, .sk-info {
+  min-height: 320px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #eee 25%, #f6f6f6 37%, #eee 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+}
+
+/* Utilities */
+.ctsp-subtitle { font-size: 18px; font-weight: 700; margin: 0 0 12px 0; }
+/* Pastel blue */
+.ctsp .btn.btn-primary{
+  background-color: #A7C7E7;     /* xanh pastel */
+  border-color:    #A7C7E7;
+  color: #0f2a3a;                /* chữ đậm để dễ đọc */
+  box-shadow: 0 8px 20px rgba(167,199,231,.35);
+}
+.ctsp .btn.btn-primary:hover{
+  background-color: #8FB7DF;     /* tối nhẹ khi hover */
+  border-color:    #8FB7DF;
+}
+.ctsp .btn.btn-primary:active{
+  background-color: #7AA9D8;
+  border-color:    #7AA9D8;
+}
+.ctsp .btn.btn-primary:focus-visible{
+  outline: 2px solid #2d5d7b;    /* viền focus rõ ràng */
+  outline-offset: 2px;
+}
+
+
+/* Row căn dòng, cùng tone với header */
+.ctsp-qty-row{
+  display:flex; align-items:center; gap:12px; margin-top:12px; flex-wrap:wrap;
+}
+.ctsp-qty-label{ font-weight:600; color:#374151; }
+
+/* Khung input số lượng: viền xám nhạt, bo lớn, bóng nhẹ */
+.ctsp-qty{
+  display:inline-flex; align-items:center;
+  border:1px solid #e5e7eb; border-radius:12px; background:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,.04); overflow:hidden;
+}
+
+/* Nút ± tối giản, hover xám nhạt */
+.ctsp-qty-btn{
+  width:40px; height:40px; border:none; background:transparent;
+  font-size:20px; line-height:1; cursor:pointer; color:#111827;
+}
+.ctsp-qty-btn:hover{ background:#f7f7f8; }
+
+/* Ô nhập đậm số, căn giữa */
+.ctsp-qty-input{
+  width:64px; height:40px; border:none; outline:none; text-align:center;
+  font-weight:600; font-size:15px; color:#111827; background:transparent;
+}
+
+/* Thông tin tồn kho */
+.ctsp-stock{ color:#6b7280; font-size:14px; }
+.ctsp-stock .out{ color:#ef4444; font-weight:600; }
+
+/* Thanh thao tác: số lượng + nút + tạm tính */
+.ctsp-buybar{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  margin-top:10px;
+}
+
+/* Số lượng */
+.ctsp-qty-row{display:inline-flex; align-items:center; gap:10px;}
+.ctsp-qty-label{font-weight:600; color:#374151;}
+.ctsp-qty{
+  display:inline-flex; align-items:center; gap:0;
+  border:1px solid #e5e7eb; border-radius:12px; background:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,.04); overflow:hidden;
+}
+.ctsp-qty-btn{
+  width:40px; height:40px; border:none; background:transparent;
+  font-size:20px; line-height:1; cursor:pointer; color:#111827;
+}
+.ctsp-qty-btn:hover{ background:#f7f7f8; }
+.ctsp-qty-input{
+  width:64px; height:40px; border:none; outline:none; text-align:center;
+  font-weight:600; font-size:15px; color:#111827; background:transparent;
+}
+
+/* Tồn kho (màu xám nhẹ, sát khối số lượng) */
+.ctsp-stock{ color:#6b7280; font-size:14px; }
+.ctsp-stock .out{ color:#ef4444; font-weight:600; }
+
+/* Nút hành động – đồng bộ chiều cao/bo góc */
+.ctsp-actions{ display:inline-flex; align-items:center; gap:10px; }
+.ctsp-actions .btn{
+  height:40px; padding:0 16px; border-radius:12px; font-weight:600;
+  display:inline-flex; align-items:center; justify-content:center;
+}
+/* Giả sử đã có .btn/.btn-primary/.btn-outline trong dự án,
+   thêm nhẹ hover cho đồng tone */
+.btn-primary{ box-shadow: inset 0 -2px 0 rgba(0,0,0,.06); }
+.btn-outline{ border:1px solid #e5e7eb; background:#fff; color:#111827; }
+.btn-outline:hover{ background:#f7f7f8; }
+
+/* Tạm tính – đẩy về bên phải, nổi bật vừa phải */
+.ctsp-subtotal{
+  margin-left:auto; display:flex; align-items:center; gap:8px;
+  padding:8px 12px; border:1px solid #e5e7eb; border-radius:12px; background:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,.04);
+}
+.ctsp-subtotal span{ color:#6b7280; font-weight:600; }
+.ctsp-subtotal strong{ font-size:16px; color:#111827; }
+
+/* Responsive: khi hẹp, tạm tính xuống dòng, full width để đẹp */
+@media (max-width: 640px){
+  .ctsp-buybar{ gap:10px; }
+  .ctsp-subtotal{ margin-left:0; width:100%; justify-content:space-between; }
+}
+
