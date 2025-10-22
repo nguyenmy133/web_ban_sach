@@ -1,6 +1,6 @@
-# 📚 BookVerse — Nền tảng mua sách thông minh tích hợp AI
+# 📚 Nook Books — Nền tảng mua sách thông minh tích hợp AI
 
-BookVerse là website bán sách trực tuyến hiện đại, cung cấp trải nghiệm mua sắm tiện lợi, thông minh và cá nhân hóa.  
+Nook Books là website bán sách trực tuyến hiện đại, cung cấp trải nghiệm mua sắm tiện lợi, thông minh và cá nhân hóa.  
 Người dùng có thể dễ dàng **mua, đặt hàng, tìm kiếm**, và đặc biệt — **trò chuyện với AI gợi ý sách** phù hợp với sở thích đọc.
 
 ---
@@ -35,7 +35,7 @@ Người dùng có thể dễ dàng **mua, đặt hàng, tìm kiếm**, và đ�
 
 | Thành phần | Công nghệ |
 |-------------|------------|
-| **Frontend** | React + TypeScript + TailwindCSS |
+| **Frontend** | React + TypeScript |
 | **Backend** | Spring Boot + RESTful API |
 | **Cơ sở dữ liệu** | MySQL |
 | **AI Suggestion Engine** | Mô hình gợi ý dựa trên nội dung & sở thích người dùng |
